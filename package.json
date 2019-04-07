@@ -1,6 +1,6 @@
 {
   "name": "absolute-path.macro",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Babel macro to convert relative paths to absolute paths",
   "keywords": [
     "absolute",
