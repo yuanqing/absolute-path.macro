@@ -1,0 +1,57 @@
+{
+  "name": "absolute-path.macro",
+  "version": "0.0.0",
+  "description": "A Babel macro to convert relative paths to absolute paths",
+  "keywords": [
+    "absolute",
+    "babel",
+    "babel-plugin-macros",
+    "macro",
+    "path",
+    "plugin"
+  ],
+  "license": "MIT",
+  "author": "Lim Yuan Qing",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/absolute-path.macro.git"
+  },
+  "files": [
+    "src/absolute-path.macro.js"
+  ],
+  "main": "src/absolute-path.macro.js",
+  "scripts": {
+    "example": "babel example/example.js",
+    "fix": "prettier-standard 'example/**/*.js' 'src/**/*.js'",
+    "lint": "standard 'example/**/*.js' 'src/**/*.js'",
+    "test": "jest",
+    "snapshot": "jest --update-snapshot"
+  },
+  "devDependencies": {
+    "ast-pretty-print": "^2.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-macros": "^2.5.1",
+    "babel-plugin-tester": "^6.0.1",
+    "husky": "^1.3.1",
+    "jest": "^24.7.1",
+    "lint-staged": "^8.1.5",
+    "prettier-standard": "^9.1.1",
+    "standard": "^12.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard",
+      "git add"
+    ]
+  },
+  "standard": {
+    "globals": [
+      "expect"
+    ]
+  }
+}

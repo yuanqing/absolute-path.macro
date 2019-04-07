@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macros Empty template literal: Empty template literal 1`] = `
+
+const { absolutePath } = require('../absolute-path.macro')
+console.log(absolutePath\`\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(\`/<PROJECT_ROOT>/src/__tests__\`);
+
+`;
+
+exports[`macros Incorrect usage: Incorrect usage 1`] = `
+
+const { absolutePath } = require('../absolute-path.macro')
+console.log(absolutePath('foo'))
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+Error: ../absolute-path.macro: Usage as Call Expression is not supported
+
+`;
+
+exports[`macros No usage: No usage 1`] = `
+
+const { absolutePath } = require('../absolute-path.macro')
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+
+
+`;
+
+exports[`macros Non-empty template literal: Non-empty template literal 1`] = `
+
+const { absolutePath } = require('../absolute-path.macro')
+console.log(absolutePath\`foo\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(\`/<PROJECT_ROOT>/src/__tests__/foo\`);
+
+`;
